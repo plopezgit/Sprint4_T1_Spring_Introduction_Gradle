@@ -9,14 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
-
 @Controller
 public class HelloWorldController {
 	
 	@GetMapping("/HelloWorld")
 	@ResponseBody
-	public String hi(@RequestParam(defaultValue = "UNKNOWN") String name) {
+	public String hi(@RequestParam(name =("name"), defaultValue = "UNKNOWN") String name) {
 		return "Hi " + name + ", you are in";
 	}
 	
