@@ -15,13 +15,13 @@ public class HelloWorldController {
 	@GetMapping("/HelloWorld")
 	@ResponseBody
 	public String hi(@RequestParam(name =("name"), defaultValue = "UNKNOWN") String name) {
-		return "Hi " + name + ", you are in";
+		return "Hi " + name + ", you are in Gradle.";
 	}
 	
 	@RequestMapping(value = {"/HelloWorld/", "/HelloWorld/{n}"})
 	@ResponseBody
 	public String hi2(@PathVariable(name= "n") Optional<String> optionalName) {
-		return (optionalName.isPresent())? "Hi " + optionalName.get() + ", you are in" : "Hi " + optionalName.orElse("UNKNOWN") + ", you are in";	
+		return (optionalName.isPresent())? "Hi " + optionalName.get() + ", you are in Gradle." : "Hi " + optionalName.orElse("UNKNOWN") + ", you are in Gradle.";	
 	}
 
 	
